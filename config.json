@@ -8,7 +8,7 @@
   "dt_branch": "android-9.0",
   "dt_remote": "github",
   "dt_path": "device/clerk/chafly",
-  "device_code": "kiwi",
+  "device_code": "chafly",
   "fix_product": true,
   "fix_misscom": true,
   "fix_busybox": true,
