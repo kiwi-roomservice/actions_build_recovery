@@ -4,13 +4,13 @@
   "git_username": "Pinkdoge",
   "git_email": "42758990+Pinkdoge@users.noreply.github.com",
   "use_own_dt": true,
-  "dt_url": "pinkdoge/twrp_device_huawei_kiwi",
+  "dt_url": "pinkdoge/twrp_device_clerk_chafly",
   "dt_branch": "android-9.0",
   "dt_remote": "github",
-  "dt_path": "device/huawei/kiwi",
+  "dt_path": "device/clerk/chafly",
   "device_code": "kiwi",
   "fix_product": true,
   "fix_misscom": true,
-  "fix_busybox": false,
+  "fix_busybox": true,
   "fix_branch": "android-9.0"
 }
