@@ -104,7 +104,7 @@ jobs:
         rm -rf Android.mk
         cp ${{ steps.pwd.outputs.pwd }}/../definitions.mk ${{ steps.pwd.outputs.pwd }}/build/core/definitions.mk
         cp ${{ steps.pwd.outputs.pwd }}/../Android.mk ${{ steps.pwd.outputs.pwd }}/build/target/board/Android.mk
-        sed -i 's!iteritems!items!g' ${{ steps.pwd.outputs.pwd }}/../build/make/tools/post_process_props.py
+        sed -i 's!iteritems!items!g' ${{ steps.pwd.outputs.pwd }}/build/make/tools/post_process_props.py
 
     - name: Fix cannot locate product
       if: steps.var.outputs.fix_product == 'true'
