@@ -1,6 +1,6 @@
 {
-  "twrp_url": "https://gitlab.com/OrangeFox/Manifest",
-  "twrp_branch": "fox_9.0",
+  "twrp_url": "https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni",
+  "twrp_branch": "twrp-9.0",
   "git_username": "Pinkdoge",
   "git_email": "42758990+Pinkdoge@users.noreply.github.com",
   "use_own_dt": true,
@@ -10,7 +10,7 @@
   "dt_path": "device/clerk/chafly",
   "device_code": "chafly",
   "fix_product": true,
-  "fix_misscom": false,
-  "fix_busybox": false,
+  "fix_misscom": true,
+  "fix_busybox": true,
   "fix_branch": "android-9.0"
 }
