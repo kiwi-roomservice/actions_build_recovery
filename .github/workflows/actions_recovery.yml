@@ -96,9 +96,14 @@ jobs:
         
     - name: Fix mtk bug
       run: |
-        cd workspace
-        rm -rf build
-        git clone https://github.com/kiwi-roomservice/android_build.git build
+        cd ${{ steps.pwd.outputs.pwd }}/build/tools
+        rm -rf check_radio_versions.py
+        cd ${{ steps.pwd.outputs.pwd }}/build/core
+        rm -rf definitions.mk
+        cd ${{ steps.pwd.outputs.pwd }}/build/target/board
+        rm -rf Android.mk
+        cp ${{ steps.pwd.outputs.pwd }}/../definitions.mk ${{ steps.pwd.outputs.pwd }}/build/core/definitions.mk
+        cp ${{ steps.pwd.outputs.pwd }}/../Android.mk ${{ steps.pwd.outputs.pwd }}/build/target/board/Android.mk
 
     - name: Fix cannot locate product
       if: steps.var.outputs.fix_product == 'true'
