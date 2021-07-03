@@ -94,6 +94,12 @@ jobs:
         repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
         ls -al
         
+    - name: Fix mtk bug
+      run: |
+        cd workspace
+        rm -rf build
+        git clone https://github.com/kiwi-roomservice/android_build.git build
+
     - name: Fix cannot locate product
       if: steps.var.outputs.fix_product == 'true'
       run: |
