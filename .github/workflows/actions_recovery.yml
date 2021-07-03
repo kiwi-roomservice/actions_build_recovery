@@ -105,6 +105,8 @@ jobs:
         cp ${{ steps.pwd.outputs.pwd }}/../definitions.mk ${{ steps.pwd.outputs.pwd }}/build/core/definitions.mk
         cp ${{ steps.pwd.outputs.pwd }}/../Android.mk ${{ steps.pwd.outputs.pwd }}/build/target/board/Android.mk
         sed -i 's!iteritems!items!g' ${{ steps.pwd.outputs.pwd }}/build/make/tools/post_process_props.py
+        rm -rf ${{ steps.pwd.outputs.pwd }}/build/make/tools/fs_config/fs_config_generator.py
+        cp ${{ steps.pwd.outputs.pwd }}/../fs_config_generator.py ${{ steps.pwd.outputs.pwd }}/build/make/tools/fs_config/fs_config_generator.py
 
     - name: Fix cannot locate product
       if: steps.var.outputs.fix_product == 'true'
