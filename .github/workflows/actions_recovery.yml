@@ -93,20 +93,6 @@ jobs:
         cd workspace
         repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
         ls -al
-        
-    - name: Fix mtk bug
-      run: |
-        cd ${{ steps.pwd.outputs.pwd }}/build/tools
-        rm -rf check_radio_versions.py
-        cd ${{ steps.pwd.outputs.pwd }}/build/core
-        rm -rf definitions.mk
-        cd ${{ steps.pwd.outputs.pwd }}/build/target/board
-        rm -rf Android.mk
-        cp ${{ steps.pwd.outputs.pwd }}/../definitions.mk ${{ steps.pwd.outputs.pwd }}/build/core/definitions.mk
-        cp ${{ steps.pwd.outputs.pwd }}/../Android.mk ${{ steps.pwd.outputs.pwd }}/build/target/board/Android.mk
-        sed -i 's!iteritems!items!g' ${{ steps.pwd.outputs.pwd }}/build/make/tools/post_process_props.py
-        rm -rf ${{ steps.pwd.outputs.pwd }}/build/make/tools/fs_config/fs_config_generator.py
-        cp ${{ steps.pwd.outputs.pwd }}/../fs_config_generator.py ${{ steps.pwd.outputs.pwd }}/build/make/tools/fs_config/fs_config_generator.py
 
     - name: Fix cannot locate product
       if: steps.var.outputs.fix_product == 'true'
